@@ -1,8 +1,11 @@
 #Build a todo app using Angular and Rails
 
 [Welcome to your life; there's no turning back.](https://www.youtube.com/watch?v=ST86JM1RPl0)
+
 Even while we sleep we will find you acting on your best behaviour.
+
 Turn your back on mother nature.
+
 Everybody want's to rule the world.
 
 You've been tasked with building a todo app using Angular and Rails.
