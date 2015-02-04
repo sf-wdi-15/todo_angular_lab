@@ -10,7 +10,7 @@ Everybody want's to rule the world.
 
 You've been tasked with building a todo app using Angular and Rails.
 
-*We've determined that you'll need the following*
+**We've determined that you'll need the following**
 
 ##Todo Controller
 * The Todo controller needs methods for `create` and `index`.
@@ -22,7 +22,7 @@ You've been tasked with building a todo app using Angular and Rails.
 ##Todo Model
 * The Todo model needs attributes `content:string` and `complete:boolean`.
 
-*Be sure not to forget to include *
+**Be sure not to forget to include**
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.js"></script>
 ```
