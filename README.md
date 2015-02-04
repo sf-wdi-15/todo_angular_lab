@@ -1,6 +1,6 @@
 #Build a todo app using Angular and Rails
 
-Welcome to your life; there's no turning back.
+[Welcome to your life; there's no turning back.](https://www.youtube.com/watch?v=ST86JM1RPl0)
 Even while we sleep we will find you acting on your best behaviour.
 Turn your back on mother nature.
 Everybody want's to rule the world.
@@ -19,7 +19,7 @@ You've been tasked with building a todo app using Angular and Rails.
 ##Todo Model
 * The Todo model needs attributes `content:string` and `complete:boolean`.
 
-Be sure not to forget to include 
+*Be sure not to forget to include *
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.js"></script>
 ```
