@@ -16,11 +16,18 @@ class TodosController < ApplicationController
     end
   end
 
+  # def update
+  #   todo_id = params[:id]
+  #   @todo = Todo.find(todo_id)
+  #   editedTodo = params[:complete]
+  #   @todo.update(:complete => true)
+  #   respond_with @todo
+  # end
+
   def update
     todo_id = params[:id]
     @todo = Todo.find(todo_id)
-    editedTodo = params[:complete]
-    @todo.update(:complete => true)
+    @todo.update(complete: params[:complete])
     respond_with @todo
   end
 

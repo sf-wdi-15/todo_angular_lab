@@ -22,9 +22,9 @@
     <div ng-repeat="todo in todos">
       <h3>{{todo.content}}</h3>
       <h4>{{todo.complete}}</h4>
-      <form ng-submit="completeTodo()">
-        <input type="checkbox" ng-model="completedTodo">
-        <button>Complete</button>
+      <form ng-submit="completeTodo()"> 
+        <input type="checkbox" ng-model="todo.completed">
+        <button>Check If Completed</button>
       </form>
     </div>
   

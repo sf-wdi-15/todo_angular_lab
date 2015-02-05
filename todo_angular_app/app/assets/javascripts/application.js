@@ -44,13 +44,20 @@ TodoApp.controller("TodosCtrl", ['$scope', '$http', function($scope, $http){
       });
     };
 
+    // $scope.completeTodo = function() {
+    //   todo.complete = true;
+    //   $http.post('/todos.json', {todo: $scope.newTodo})
+    //   .success(function (data){
+    //     console.log(data);
+    //     $scope.todos.push(data);
+    //     $scope.newTodo = {};
+    //   });
+    // };
+
     $scope.completeTodo = function() {
-      todo.complete = true;
-      $http.post('/todos.json', {todo: $scope.newTodo})
+      $http.patch('/todos/' + $scope.todo.id + '.json', { complete: $scope.todo.completed})
       .success(function (data){
         console.log(data);
-        $scope.todos.push(data);
-        $scope.newTodo = {};
       });
     };
 
