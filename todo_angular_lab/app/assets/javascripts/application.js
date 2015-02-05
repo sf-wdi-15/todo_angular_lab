@@ -14,3 +14,37 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Let's define our Angular App Module
+var TodoApp = angular.module("TodoApp", []);
+
+// configured the http module to include
+// the X-CSRF-Token
+TodoApp.config(["$httpProvider", function($httpProvider){
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+}]);
+
+
+TodoApp.controller("TodosCtrl", ["$scope", "$http", function ($scope, $http) {
+  $scope.greeting = "Add a Todo Item";
+
+
+  $http.get("/todos.json")
+    .success(function (data) {
+      console.log(data);
+      $scope.todos = data;
+    });
+
+  $scope.todos = [];
+  // handle form submit
+  $scope.addTodo = function () {
+    console.log($scope.newTodo);
+
+    $http.post("/todos.json", {todo: $scope.newTodo})
+      .success(function (data) {
+        console.log(data);
+        $scope.todos.push(data);
+        $scope.newTodo = {};
+      });
+  };
+}])
