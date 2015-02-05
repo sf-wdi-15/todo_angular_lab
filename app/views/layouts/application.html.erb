@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.js"></script>
+   <title>TodoAngularLab</title>
+   
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-app="TodoApp">
+	<div ng-controller="TodosCtrl">
+		<form ng-submit="addTodo()">
+			<div>
+			<textarea type="text" ng-model="newTodo.content"></textarea>
+			</div>
+
+			<div>
+			<input type="checkbox" ng-model="newTodo.complete">
+			</div>
+
+			<div>
+				<button>Add Todo</button>
+			</div>
+		</form>
+		
+		<div ng-repeat="todo in todos">
+			{{ todo }}
+		</div>
+	</div>
+<%= yield %>
+
+</body>
+</html>
