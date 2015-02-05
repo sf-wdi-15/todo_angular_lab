@@ -14,4 +14,12 @@ TodoApp.config(["$httpProvider", function($httpProvider){
 
 TodoApp.controller("TodoCtrl", ["$scope", "$http", function($scope, $http){
   $scope.greeting = "Hello world";
+  $scope.todos = [];
+
+  $http.get('/todos.json')
+       .success( function(data) {
+        console.log(data);
+        $scope.todos = data;
+       })
+       ;
 }])
