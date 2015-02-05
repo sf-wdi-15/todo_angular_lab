@@ -10,7 +10,7 @@ class TodosController < ApplicationController
   def create
       @todo = Todo.create(todo_params)
       respond_to do |f|
-        f.json {render json: @book}
+        f.json {render json: @todo}
       end
   end
 

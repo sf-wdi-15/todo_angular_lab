@@ -13,13 +13,25 @@ TodoApp.config(["$httpProvider", function($httpProvider){
 }]);
 
 TodoApp.controller("TodoCtrl", ["$scope", "$http", function($scope, $http){
-  $scope.greeting = "Hello world";
+
   $scope.todos = [];
 
+  // GET all Todos
   $http.get('/todos.json')
        .success( function(data) {
-        console.log(data);
+        // console.log(data);
         $scope.todos = data;
-       })
-       ;
+       });
+
+  // handle addTodo() on form submission
+  $scope.addTodo = function(){
+    $http.post("/todos.json", {todo: $scope.newTodo})
+         .success(function(data){
+          // console.log(data);
+          $scope.todos.push(data);
+          // clear form
+          $scope.newTodo = {};
+         })
+         ;
+  };
 }])

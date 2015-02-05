@@ -1,6 +1,31 @@
-<h1>Todos#index</h1>
-<p>Find me in app/views/todos/index.html.erb</p>
-{{4+2}} is 3...
+<!-- TodoCtrl scope -->
 <div ng-controller="TodoCtrl">
-  {{greeting}}
+    
+  <h1>TodoApp</h1>
+    
+    <!-- addTodo() form -->
+    <form ng-submit="addTodo()">
+      <fieldset>
+        <input type="text"
+               placeholder="New Todo" 
+               ng-model="newTodo.content">
+        <input type="checkbox" 
+               ng-model="newTodo.complete"
+               ng-true-value="true"
+               ng-false-value="false">
+        <button>Add Todo</button>
+      </fieldset>
+    </form>
+    <!-- /addTodo() form -->
+
+    <!-- todos [] -->
+    <h2>List of Todos</h2>
+    <ul id="todo-list">
+        <li ng-repeat="todo in todos">
+          <span><input ng-model="todo.complete" type="checkbox" > {{todo.content}}</span>
+        </li>
+    </ul>
+    <!-- /todos [] -->
+
 </div>
+<!-- /TodoCtrl scope -->
