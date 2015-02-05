@@ -7,9 +7,29 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="TodoApp">
+  <div ng-controller="TodoCtrl">
+    {{greeting}}
 
-<%= yield %>
+  <form ng-submit="addTodo()">
+    <div>
+      <input type="text" ng-model="newTodo.content">
+    </div>
+    <div>
+      <input type="checkbox" ng-model="newTodo.complete">
+    </div>
+    <div>
+      <buttom>Add Todo</buttom>
+    </div>
+  </form>
+    {{newTodo}}
+
+  <div ng-repeat="todo in todos">
+    <h3>{{todo.content}}</h3>
+    <h3>{{todo.complete}}</h3>
+  </div>
+
+
 
 </body>
 </html>
