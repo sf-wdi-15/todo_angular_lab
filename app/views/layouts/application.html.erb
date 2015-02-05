@@ -8,6 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="ToDoApp">
+ <div class="container">
+ 	<div class="col-sm-12">
 	<div ng-controller="ToDoCtrl">
 		{{greeting}}
 		
@@ -16,7 +18,7 @@
 		</div>
 		<form ng-submit="addTodo()">
 			<div>
-				<input type="text" ng-model="newTodo.content">
+				<input type="text" placeholder="Add a To Do" ng-model="newTodo.content">
 			</div>
 			<div>
 				<input type="checkbox" ng-model="newTodo.complete">
@@ -30,7 +32,8 @@
 				<input type="checkbox" ng-model="todo.complete">
 				<span="{{todo.complete}}">{{todo.content}}</span> 
 		</div>
-
 	</div>
+	</div>
+ </div>
 </body>
 </html>
