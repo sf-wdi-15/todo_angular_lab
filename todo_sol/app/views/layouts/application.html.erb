@@ -25,7 +25,7 @@
     <div ng-repeat="todo in todos">
       <div> 
         {{todo.content}} 
-      <input type="checkbox" ng-model="todo.completed">
+      <input type="checkbox" ng-model="todo.completed" ng-change="updateTodo()">
       </div>
     </div> 
   </div>

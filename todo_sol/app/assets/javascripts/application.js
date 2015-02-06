@@ -43,9 +43,10 @@ TodoApp.controller("TodosCtrl", ["$scope", "$http", function ($scope, $http) {
   };
 
   $scope.updateTodo = function (){
-    console.log("updating")
-    $http.patch("/todos/"+$scope.todo.id + ".json", {todo: $scope.todo})
-      .done(function (data) {
+    console.log("updating", this.todo)
+    console.log($http)
+    $http.patch("/todos/"+this.todo.id + ".json", {todo: this.todo})
+      .success(function (data) {
         console.log("updated")
       });
   };
