@@ -28,8 +28,9 @@
 			</div>
 		</form>
 		<br>
+		<!-- ng-repeat to list each todo, ng-change specifies an update/patch -->
 		<div ng-repeat="todo in todos">
-				<input type="checkbox" ng-model="todo.complete">
+				<input type="checkbox" ng-model="todo.complete" ng-change="updateTodo()">
 				<span="{{todo.complete}}">{{todo.content}}</span> 
 		</div>
 	</div>

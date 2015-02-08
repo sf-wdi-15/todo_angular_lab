@@ -45,6 +45,17 @@ ToDoApp.controller("ToDoCtrl", ["$scope", "$http", function ($scope, $http) {
 	
 	};
 
+	$scope.updateTodo = function () {
+		console.log("updating", this.todo);
+		console.log($http)
+
+		// use patch to update -- set route todos + todo.id + json
+		$http.patch("/todos/" + this.todo.id + ".json", {todo: this.todo})
+			.success(function (data) {
+				console.log("Your todo has been  updated");
+			});
+	};
+
   $scope.remainingTodos = function() {
       var count = 0;
       angular.forEach($scope.todos, function(todo) {
